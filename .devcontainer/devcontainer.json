@@ -1,0 +1,39 @@
+{
+  "name": "Idea to First User starter",
+  "image": "mcr.microsoft.com/devcontainers/javascript-node:1-22-bookworm",
+  "hostRequirements": {
+    "cpus": 2,
+    "memory": "4gb"
+  },
+  "features": {
+    "ghcr.io/devcontainers/features/github-cli:1": {}
+  },
+  "forwardPorts": [3000],
+  "portsAttributes": {
+    "3000": {
+      "label": "App preview",
+      "onAutoForward": "openBrowser"
+    }
+  },
+  "containerEnv": {
+    "NEXT_TELEMETRY_DISABLED": "1"
+  },
+  "postCreateCommand": "npm install; npm install -g @anthropic-ai/claude-code",
+  "customizations": {
+    "vscode": {
+      "extensions": [
+        "anthropic.claude-code",
+        "bradlc.vscode-tailwindcss"
+      ],
+      "settings": {
+        "editor.formatOnSave": false,
+        "git.autofetch": true,
+        "chat.disableAIFeatures": true,
+        "terminal.integrated.initialHint": false
+      }
+    },
+    "codespaces": {
+      "openFiles": ["README.md", "SPEC.md", "DESIGN.md"]
+    }
+  }
+}

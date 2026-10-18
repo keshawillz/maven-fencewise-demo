@@ -1,0 +1,15 @@
+@import "tailwindcss";
+
+/* Keep this file small. Tailwind classes in components do most of the work.
+   Set your visual direction (week 1) by changing the two colors below and
+   the font in layout.tsx. */
+:root {
+  --background: #ffffff;
+  --foreground: #18181b;
+}
+
+body {
+  background: var(--background);
+  color: var(--foreground);
+  font-family: ui-sans-serif, system-ui, -apple-system, "Segoe UI", Roboto, sans-serif;
+}

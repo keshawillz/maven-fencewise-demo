@@ -1,0 +1,22 @@
+# Build settings for AWS Amplify Hosting (connected in week 3).
+# Amplify reads this file from the repo. You should not need to edit it.
+version: 1
+backend:
+  phases:
+    build:
+      commands:
+        - npm install --cache .npm --prefer-offline
+        - npx ampx pipeline-deploy --branch $AWS_BRANCH --app-id $AWS_APP_ID
+frontend:
+  phases:
+    build:
+      commands:
+        - npm run build
+  artifacts:
+    baseDirectory: .next
+    files:
+      - '**/*'
+  cache:
+    paths:
+      - .next/cache/**/*
+      - .npm/**/*
