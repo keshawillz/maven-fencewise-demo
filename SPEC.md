@@ -1,42 +1,43 @@
 # One-page spec
 
-Fill this in during Session 1, with DESIGN.md. Claude Code reads both before it builds anything, so be concrete. One user, one problem, one flow.
-
 ## Product
 
-**Name:** [Product name]
+**Name:** Fencewise
 
-**Positioning:** For [audience] who [need], [product] is a [category] that [benefit].
+**Positioning:** For homeowners who need a fence price before they call anyone, Fencewise is a 60-second estimator that gives a real ballpark number and a next step.
 
 ## One user
 
-[The person this is for, named by role. Example: "A solo wedding planner who runs 8 to 12 weddings a year."]
+A homeowner who just decided to replace or add a fence, has no idea what it costs, and doesn't want to book three contractor visits to find out.
 
 ## One problem
 
-[What they lose without you, in one sentence.]
+They can't get a number without a sales call, so they put it off for months.
 
 ## One flow
 
-The single thing the user can do in v1, as a numbered list of screens. One screen per image in `design/`.
+1. **Home:** headline, subhead, one button: "Get my estimate."
+2. **Estimate form:** fence length in feet, material (wood, vinyl, chain link, aluminum), number of gates, height (4 ft or 6 ft). One "See my estimate" button.
+3. **Result:** a price range (low to high), a one-line note on what moves the price, a plain "Change my answers" text link back to the form, and a "Request a real quote" signup form (email, name optional) that saves with source "estimate".
+4. **Done:** "Got it. We'll send a real quote within two business days." with the estimate still visible.
 
-1. [Screen 1: what the user sees and does]
-2. [Screen 2]
-3. [Screen 3]
-4. [What they see when they're done]
+## Pricing math (v1, keep it simple)
+
+Per-foot ranges, 6 ft height: wood $25 to $45, vinyl $30 to $55, chain link $15 to $30, aluminum $40 to $70. Multiply by 0.8 for 4 ft. Add $350 to $650 per gate. Round to the nearest $50. These are placeholder numbers; a real contractor would replace them.
 
 ## Out of scope for v1
 
 - No login or user accounts
 - No payments
-- [Anything else you're tempted to add. Write it here so it waits for the 90-day plan.]
+- No contractor matching, no scheduling, no photos, no address lookup
+- No saving estimates across visits
 
 ## Done when
 
-[The one thing the user can do on the live URL. Example: "A planner can paste a vendor email, pick the wedding it belongs to, and see it in that wedding's list."]
+A homeowner can enter four fields, see a price range, and leave their email on the live URL, and the signup shows up with source "estimate".
 
 ## Signups
 
-Where the signup form appears in the flow: [the home page / after the flow / both]
+Where the signup form appears in the flow: on the result screen only. The home page has one action: "Get my estimate."
 
-What the button says: [label]
+What the button says: "Request a real quote"
