@@ -1,15 +1,23 @@
 @import "tailwindcss";
 
 /* Keep this file small. Tailwind classes in components do most of the work.
-   Set your visual direction (week 1) by changing the two colors below and
-   the font in layout.tsx. */
-:root {
-  --background: #ffffff;
-  --foreground: #18181b;
+   The colors and fonts below come from DESIGN.md. Each one becomes a Tailwind
+   class, for example bg-tape, bg-tint, font-condensed. */
+@theme inline {
+  --color-tape: #ffd23f; /* the accent: main button and the tape band only */
+  --color-tape-hover: #f2bf1c;
+  --color-tape-pressed: #e0ae0c;
+  --color-tint: #f3f3ee; /* input backgrounds and picker tiles */
+  --color-error: #b42318; /* error messages next to a field */
+
+  /* The fonts are loaded in app/layout.tsx. */
+  --font-sans: var(--font-barlow), ui-sans-serif, system-ui, sans-serif;
+  --font-condensed: var(--font-barlow-condensed), ui-sans-serif, system-ui, sans-serif;
 }
 
 body {
-  background: var(--background);
-  color: var(--foreground);
-  font-family: ui-sans-serif, system-ui, -apple-system, "Segoe UI", Roboto, sans-serif;
+  background: #ffffff;
+  color: #000000;
+  font-size: 1.125rem; /* 18px body text */
+  line-height: 1.5;
 }
