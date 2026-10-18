@@ -1,29 +1,28 @@
-import SignupForm from "@/components/SignupForm";
+import Link from "next/link";
+import PageShell from "@/components/PageShell";
+import TapeMeasure from "@/components/TapeMeasure";
+import { headlineClass, mainButtonClass } from "@/components/ui";
 
 /*
-  Your home page. This is the blank page every product in the cohort starts from.
-  Week 1: replace the headline and subhead with your positioning.
-  Week 2: build your one core flow (usually on its own page under app/).
-  Week 3: this page goes live on Amplify, and the form starts saving for real.
+  Home: headline, the tape rule, subhead, and one button.
+  Per SPEC.md the signup form is NOT here; it lives on the result screen only.
 */
 export default function Home() {
   return (
-    <main className="mx-auto flex min-h-screen w-full max-w-3xl flex-col gap-10 px-6 py-16">
-      <header className="flex flex-col gap-4">
-        <p className="text-sm font-medium uppercase tracking-wide text-zinc-500">[Your product name]</p>
-        <h1 className="text-4xl font-semibold leading-tight text-zinc-900 sm:text-5xl">
-          [Headline: what it is and who it&apos;s for, in one line]
-        </h1>
-        <p className="max-w-xl text-lg text-zinc-600">
-          [Subhead: the benefit, in one sentence a stranger would understand in five seconds.]
-        </p>
-      </header>
+    <PageShell>
+      <h1 className={`mt-20 ${headlineClass}`}>Get a fence price before you call anyone.</h1>
 
-      <SignupForm heading="[Call to action, like: Get early access]" buttonLabel="[Button label]" source="home" />
+      <div className="mt-6">
+        <TapeMeasure />
+      </div>
 
-      <footer className="mt-auto text-xs text-zinc-400">
-        [Privacy line: what you collect and why. Added in week 3.]
-      </footer>
-    </main>
+      <p className="mt-8">
+        Answer four questions and get a real ballpark number in 60 seconds. No sales visit, no login.
+      </p>
+
+      <Link href="/estimate" className={`mt-12 ${mainButtonClass}`}>
+        Get my estimate
+      </Link>
+    </PageShell>
   );
 }
